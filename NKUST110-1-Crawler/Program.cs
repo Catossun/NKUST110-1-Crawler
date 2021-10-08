@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace NKUST110_1_Crawler
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var data = await Repository.FetchDataAsync();
+            foreach (var item in data)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
